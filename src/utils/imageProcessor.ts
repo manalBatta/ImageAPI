@@ -107,7 +107,8 @@ class ImageProcessor {
 
       // Verify the file was created
       if (!fs.existsSync(thumbPath)) {
-        throw new Error('Failed to create thumbnail file');
+        const error = new Error('the file was not created');
+        throw new Error('Failed to create thumbnail file', { cause: error });
       }
 
       return thumbPath;
@@ -120,7 +121,7 @@ class ImageProcessor {
           console.error('Error cleaning up partial file:', unlinkError);
         }
       }
-      throw new Error(`Failed to process image: ${error}`);
+      throw new Error(`Failed to process image: ${error}`, { cause: error });
     }
   }
 
@@ -173,7 +174,7 @@ class ImageProcessor {
       }
     } catch (error) {
       console.error('Error clearing cache:', error);
-      throw new Error('Failed to clear cache');
+      throw new Error('Failed to clear cache', { cause: error });
     }
   }
 

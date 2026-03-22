@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "ES2022",
     "module": "commonjs",
-    "lib": ["es2020"],
+    "lib": ["ES2022"],
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "strict": true,
+    "types": ["node", "jasmine"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "spec"]
+  "include": ["src/**/*", "spec/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

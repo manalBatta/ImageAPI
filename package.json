@@ -8,7 +8,7 @@
     "build": "tsc",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts",
-    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "test": "ts-node --project tsconfig.spec.json node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "clean": "rm -rf dist"
   },
   "keywords": [],
@@ -16,7 +16,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint-plugin-jsdoc": "^62.8.0",
     "express": "^5.2.1",
+    "i": "^0.3.7",
+    "npm": "^11.12.0",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
@@ -30,12 +34,14 @@
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "jasmine": "^6.0.0",
+    "globals": "^17.4.0",
+    "jasmine": "^6.1.0",
     "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^3.1.11",
     "prettier": "^3.8.1",
     "supertest": "^7.2.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }
